@@ -1,0 +1,46 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Alex Motellón - Tabs</title>
+{% endblock %}
+
+
+{% block nav %}
+    <li class="nav-item"><a class="nav-link" href="{% url 'main:contact' %}">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'main:tabs' %}">Tabs</a></li>
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'main:homepage' %}">Videos</a></li>
+{% endblock %}
+
+
+{% block header %}
+    <h1 class="fw-bolder">{{ video.title }}</h1>
+    <p class="lead mb-0">PDF and Guitar Pro files below</p>
+{% endblock %}
+
+
+{% block content %}
+    <!-- Page content-->
+    <div class="container" >
+        <div class="row d-flex justify-content-center">
+            <!-- Blog entries-->
+            <div class="col">
+                <!-- Nested row for non-featured blog posts-->
+                    <div class="row-px-5">
+                        <!-- Blog post-->
+                        <div class="card">
+                            <iframe class="card-img-top" width="600" height="500" src="{{ video.url }}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen referrerpolicy="strict-origin-when-cross-origin; no-referrer-when-downgrade"></iframe>
+                            {% if video.tab_pdf %}
+                            <div class="card-body text-center">
+                                <a class="btn btn-secondary" href="{% url 'main:download' id=video.id fformat='pdf' %}">
+                                Download PDF Tab</a>
+                                <a class="btn btn-secondary" href="{% url 'main:download' id=video.id fformat='gp' %}">Download Guitar Pro 5 Tab</a>
+                            </div>
+                            {% endif %}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

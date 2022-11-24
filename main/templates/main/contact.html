@@ -1,0 +1,80 @@
+{% extends "main/base.html" %}
+{% load static %}
+
+
+{% block title %}
+    <title>Alex Motellón - Contact</title>
+{% endblock %}
+
+
+{% block nav %}
+    <li class="nav-item"><a class="nav-link active" aria-current="page" href="{% url 'main:contact' %}">Contact</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'main:tabs' %}">Tabs</a></li>
+    <li class="nav-item"><a class="nav-link" href="{% url 'main:homepage' %}">Videos</a></li>
+{% endblock %}
+
+
+
+{% block header %}
+    <h1 class="fw-bolder">Contact</h1>
+    <p class="lead mb-0">You can contact me here</p>
+{% endblock %}
+
+{% block content %}
+    <!-- Page content-->
+    <div class="container" >
+        <div class="row d-flex justify-content-center">
+            <div class="col-sm-8">
+                    <!-- Contact card-->
+                    <div class="row px-5 mx-5 text-center">
+                        <div class="card mt-3">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <a href="mailto:alexmote96@gmail.com">
+                                        <img src="{% static 'main/assets/gmail.gif' %}" width='100' height='100'></img>
+                                    </a>
+                                    <p class="card-title">Mail</p>
+                                </div>
+                                <div class="col align-self-center">
+                                    <a class="card-text" href="mailto:alexmote96@gmail.com" target="_blank">alexmote96@gmail.com</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Contact card-->
+                    <div class="row px-5 mx-5 text-center">
+                        <div class="card mt-3">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <a href="https://t.me/motellon">
+                                        <img src="{% static 'main/assets/telegram.gif' %}" width='100' height='100'></img>
+                                    </a>
+                                    <p class="card-title">Telegram</p>
+                                </div>
+                                <div class="col align-self-center">
+                                    <a class="card-text" href="https://t.me/motellon" target="_blank">https://t.me/motellon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                <!-- Contact card-->
+                    <div class="row px-5 mx-5 text-center">
+                        <div class="card mt-3">
+                            <div class="row no-gutters">
+                                <div class="col-sm-5">
+                                    <a href="https://www.youtube.com/@AlexMotellon">
+                                        <img src="{% static 'main/assets/youtube.gif' %}" width='100' height='100'></img>
+                                    </a>
+                                    <p class="card-title">Youtube</p>
+                                </div>
+                                <div class="col align-self-center">
+                                    <a class="card-text" href="https://www.youtube.com/@AlexMotellon" target="_blank">
+                                        https://www.youtube.com/@AlexMotellon</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
